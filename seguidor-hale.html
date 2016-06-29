@@ -72,7 +72,7 @@
 			});
 			
 			return (
-			<select value={selectValue} className={selectClass}>
+			<select defaultValue={selectValue} className={selectClass}>
 			  {statusNodes}							
 			</select>
 			);
@@ -99,16 +99,17 @@
 		var SubjectList = React.createClass({
 		  
 		  render: function() {
+		  
 			var subjectNodes = this.props.data.map(function(subject) {
 			  return (
-				<Subject id={subject.id} name={subject.name} status={subject.status} />
+				<Subject key={subject.id} id={subject.id} name={subject.name} status={subject.status} />
 			  );
 			});
 			
 			return (
-			  <div className="materias-list">
+			<div className="materias-list">
 				{subjectNodes}
-			  </div>
+			</div>
 			);
 		  }
 		});
