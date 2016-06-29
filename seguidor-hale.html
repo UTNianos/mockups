@@ -50,33 +50,39 @@
 		
 		var subjectStatuses = 
 		[
-			{value: 1, text: "Pendiente"},
-			{value: 2, text: "Cursando"},
-			{value: 3, text: "Firmada"},
-			{value: 4, text: "Aprobada"}
+			{id:1, value: 1, text: "Pendiente"},
+			{id:2, value: 2, text: "Cursando"},
+			{id:3, value: 3, text: "Firmada"},
+			{id:4, value: 4, text: "Aprobada"},
+			{id:5, value: 5, text: "Oyente"}
 		];
-		
-		var MateriaStatus = React.createClass({		  		  		
-		  render: function() {        			
-			return (			
+			
+		var StatusDropdown = React.createClass({
+		  
+		  render: function() {
+			
+			var statusNodes = this.props.data.map(function(status) {
+			  return (
+					<option key={status.id} value={status.value}>{status.text}</option>
+			  );
+			});
+			
+			return (
 			<select className="form-control input-sm materia-status">
-				<option value="1" selected="true">Pendiente</option>
-				<option value="2" >Cursando</option>
-				<option value="3" >Firmada</option>
-				<option value="4" >Aprobada</option>
+				{statusNodes}							
 			</select>
 			);
-		  }
-		});	
-				
+		  }		
+		});
+		
 		var Subject = React.createClass({
 		  		  		
 		  render: function() {        			
 			return (			
-			<div className="materia-div" id={this.props.id}>				
+			<div className="materia-div" key={this.props.id} id={this.props.id}>				
 				<span className="materia-nombre">{this.props.name}</span>
 				<span className="materia-dropdown">
-					<MateriaStatus satuses={subjectStatuses} />					
+					<StatusDropdown data={subjectStatuses} />					
 				</span>
 				<span className="materia-info">
 					<i className="fa fa-usb" aria-hidden="true"></i>
