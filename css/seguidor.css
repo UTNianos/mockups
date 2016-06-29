@@ -18,7 +18,6 @@ h1
 	padding-left:8px;
 	margin-bottom:4px;
 	cursor:default;
-	background-color:orangered;
 }
 
 .materia-div:hover
@@ -38,4 +37,24 @@ h1
 .materia-info
 {
   margin-left: 11px;	
+}
+
+.materia-pendiente
+{
+	background-color:orangered;	
+}
+
+.materia-cursando
+{
+	background-color:green;	
+}
+
+.materia-firmada
+{
+	background-color:red;	
+}
+
+.materia-aprobada
+{
+	background-color:blue;	
 }
