@@ -7,12 +7,13 @@
 .materia-div
 {
 	border: 0px solid black;
-	width: 360px;
+	width: 370px;
 	height:33px;
 	padding-top:3px;
 	padding-left:8px;
 	margin-bottom:4px;
 	cursor:default;
+	background-color:orangered;
 }
 
 .materia-div:hover

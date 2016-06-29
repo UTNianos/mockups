@@ -36,7 +36,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>    
 				
 		<script type="text/babel">		
-		var data = 
+		var subjects = 
 		[
 			{id: 1, name: "Análisis Matemático", status: 1},
 			{id: 2, name: "Algebra y Gometría Analítica", status: 1},
@@ -46,6 +46,14 @@
 			{id: 6, name: "Sistemas y Organizaciones", status: 1},
 			{id: 7, name: "Quimica", status: 1},
 			{id: 8, name: "Ingenieria y Sociedad", status: 1}
+		];
+		
+		var subjectStatuses = 
+		[
+			{value: 1, text: "Pendiente"},
+			{value: 2, text: "Cursando"},
+			{value: 3, text: "Firmada"},
+			{value: 4, text: "Aprobada"}
 		];
 		
 		var MateriaStatus = React.createClass({		  		  		
@@ -68,7 +76,7 @@
 			<div className="materia-div" id={this.props.id}>				
 				<span className="materia-nombre">{this.props.name}</span>
 				<span className="materia-dropdown">
-					<MateriaStatus />					
+					<MateriaStatus satuses={subjectStatuses} />					
 				</span>
 				<span className="materia-info">
 					<i className="fa fa-usb" aria-hidden="true"></i>
@@ -96,7 +104,7 @@
 		});
 		
 		ReactDOM.render(
-			<SubjectList data={data} />,
+			<SubjectList data={subjects} />,
 			document.getElementById('materias-group')
 		);		
 		</script>			
