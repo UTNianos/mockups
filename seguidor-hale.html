@@ -35,10 +35,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>    
 				
-		<script type="text/babel">		
+		<script type="text/babel">
+
+		// Materias
 		var subjects = 
 		[
-			{id: 1, name: "Análisis Matemático", status: 1},
+			{id: 1, name: "Análisis Matemático", status: 2},
 			{id: 2, name: "Algebra y Gometría Analítica", status: 1},
 			{id: 3, name: "Matemática Discreta", status: 1},
 			{id: 4, name: "Algoritmos y Estructura de Datos", status: 1},
@@ -47,7 +49,8 @@
 			{id: 7, name: "Quimica", status: 1},
 			{id: 8, name: "Ingenieria y Sociedad", status: 1}
 		];
-		
+
+		// Estados posibles de materias
 		var subjectStatuses = 
 		[
 			{id:1, value: 1, text: "Pendiente"},
@@ -60,15 +63,17 @@
 		  
 		  render: function() {
 			
-			var statusNodes = this.props.data.map(function(status) {
-			  return (
-					<option key={status.id} value={status.value}>{status.text}</option>
+			var selectValue = this.props.selectValue;
+			var selectClass = "form-control input-sm materia-status";
+			var statusNodes = this.props.data.map(function(status, selected) {			  
+			  return (			  			  			  		  			  
+              <option key={status.id} value={status.value}>{status.text}</option>
 			  );
 			});
 			
 			return (
-			<select className="form-control input-sm materia-status">
-				{statusNodes}							
+			<select value={selectValue} className={selectClass}>
+			  {statusNodes}							
 			</select>
 			);
 		  }		
@@ -81,7 +86,7 @@
 			<div className="materia-div" key={this.props.id} id={this.props.id}>				
 				<span className="materia-nombre">{this.props.name}</span>
 				<span className="materia-dropdown">
-					<StatusDropdown data={subjectStatuses} />					
+					<StatusDropdown data={subjectStatuses} selectValue={this.props.status} />
 				</span>
 				<span className="materia-info">
 					<i className="fa fa-usb" aria-hidden="true"></i>
