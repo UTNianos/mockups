@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">    
+		<meta name="description" content="">
+		<meta name="author" content="Rulo">
+		<link rel="icon" href="favicon.ico">
+
+		<title>Seguidor</title>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- CSS de la aplicación -->
+		<link rel="stylesheet" href="css/seguidor.css" />
+				
+		<!-- Font Awesome -->
+		<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">	
+		
+		<!-- Jquery -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>	
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>    
+				
+		<script type="text/babel">		
+		var data = 
+		[
+			{id: 1, name: "Análisis Matemático", status: 1},
+			{id: 2, name: "Algebra y Gometría Analítica", status: 1},
+			{id: 3, name: "Matemática Discreta", status: 1},
+			{id: 4, name: "Algoritmos y Estructura de Datos", status: 1},
+			{id: 5, name: "Arquitectura de Computadores", status: 1},
+			{id: 6, name: "Sistemas y Organizaciones", status: 1},
+			{id: 7, name: "Quimica", status: 1},
+			{id: 8, name: "Ingenieria y Sociedad", status: 1}
+		];
+		
+		var MateriaStatus = React.createClass({		  		  		
+		  render: function() {        			
+			return (			
+			<select className="form-control input-sm materia-status">
+				<option value="1" selected="true">Pendiente</option>
+				<option value="2" >Cursando</option>
+				<option value="3" >Firmada</option>
+				<option value="4" >Aprobada</option>
+			</select>
+			);
+		  }
+		});	
+				
+		var Subject = React.createClass({
+		  		  		
+		  render: function() {        			
+			return (			
+			<div className="materia-div" id={this.props.id}>				
+				<span className="materia-nombre">{this.props.name}</span>
+				<span className="materia-dropdown">
+					<MateriaStatus />					
+				</span>
+				<span className="materia-info">
+					<i className="fa fa-usb" aria-hidden="true"></i>
+				</span>
+			</div>						 
+			);
+		  }
+		});		
+		
+		var SubjectList = React.createClass({
+		  
+		  render: function() {
+			var subjectNodes = this.props.data.map(function(subject) {
+			  return (
+				<Subject id={subject.id} name={subject.name} status={subject.status} />
+			  );
+			});
+			
+			return (
+			  <div className="materias-list">
+				{subjectNodes}
+			  </div>
+			);
+		  }
+		});
+		
+		ReactDOM.render(
+			<SubjectList data={data} />,
+			document.getElementById('materias-group')
+		);		
+		</script>			
+		
+	</head>
+
+	<body>			
+		<h1>Seguidor carrera sin drogas.</h1>	
+		<br />
+		<div id="materias-group"></div>		
+  </body>
+</html>
