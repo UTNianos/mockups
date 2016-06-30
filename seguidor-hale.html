@@ -61,14 +61,16 @@
 					
 		var StatusDropdown = React.createClass({
 		  
+		  getInitialState: function() {
+		    return {status: this.props.selectValue};
+		  },
+		  
 		  handleChange: function(event) {	
-			// TODO: cambiar de color según cambia el estado de materia.
-			console.log(event);
+			this.setState({status: event.target.value});			
 		  },
 		  
 		  render: function() {
 			
-			var selectValue = this.props.selectValue;
 			var selectClass = "form-control input-sm materia-status";
 			
 			var statusNodes = this.props.data.map(function(status, selected) {			  
@@ -78,7 +80,7 @@
 			});
 			
 			return (
-			<select onChange={this.handleChange} defaultValue={selectValue} className={selectClass}>
+			<select defaultValue={this.state.status} className={selectClass} onChange={this.handleChange} >
 			  {statusNodes}							
 			</select>
 			);
@@ -86,16 +88,23 @@
 		});
 		
 		var Subject = React.createClass({
-		  		  		
+          
+		  getInitialState: function() {
+			return {status: this.props.status};
+		  },
+
+		  handleChange: function(event) {							
+			this.setState({status: event.target.value});
+		  },		  
+		  
 		  render: function() {
 			
-			var index = this.props.status
-			var statusText = subjectStatuses[index-1].text.toLowerCase();
+			var statusText = subjectStatuses[this.state.status-1].text.toLowerCase();
 		    var statusClass = "materia-" + statusText;
 			var classNames = "materia-div " + statusClass;
 			
 			return (			
-			<div className={classNames} key={this.props.id} id={this.props.id}>				
+			<div className={classNames} key={this.props.id} id={this.props.id} onChange={this.handleChange}>				
 				<span className="materia-nombre">{this.props.name}</span>
 				<span className="materia-dropdown">
 					<StatusDropdown data={subjectStatuses} selectValue={this.props.status} />
