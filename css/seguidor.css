@@ -41,20 +41,20 @@ h1
 
 .materia-pendiente
 {
-	background-color:orangered;	
+	background-color:red;
 }
 
 .materia-cursando
 {
-	background-color:green;	
+	background-color:orangered;
 }
 
 .materia-firmada
 {
-	background-color:red;	
+	background-color:blue;	
 }
 
 .materia-aprobada
 {
-	background-color:blue;	
+	background-color:green;		
 }
