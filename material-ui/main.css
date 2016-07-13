@@ -1,0 +1,70 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body 
+{
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+  margin: 0px;
+}
+
+.main-body
+{
+  margin-left: 67px;
+}
+
+a, a:hover
+{
+  text-decoration: none;	
+}
+
+.toolbar-fixed
+{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  top: 0 !important;
+}
+
+.banner-img
+{
+  width: 423px;
+  height: 51px;
+}
+
+.seguidor-heading
+{
+  text-align: center;
+  margin-top: 80px;
+}
+
+.user-menu-button
+{  
+    cursor: default;
+    margin-left: 14px;
+    margin-top: 5px;
+}
+
+/* ------ MENSAJES -------- */
+
+.msg
+{
+  margin-left: 120px;
+  margin-top: 50px;
+}
+
+.msg-title
+{
+  font-size: 25px;
+}
+
+.msg-content
+{
+  border-top: 0.5px solid gainsboro;
+  border-bottom: 0.5px solid gainsboro;
+  width: 711px;
+  font-size: 15px;	
+}
