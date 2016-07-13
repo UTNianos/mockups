@@ -31,8 +31,9 @@ a, a:hover
 
 .banner-img
 {
-  width: 423px;
-  height: 51px;
+    height: 40px;
+    max-width: 251px;
+	max-height: 40px;
 }
 
 .seguidor-heading
