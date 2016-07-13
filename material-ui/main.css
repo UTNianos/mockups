@@ -31,9 +31,10 @@ a, a:hover
 
 .banner-img
 {
-    height: 40px;
-    max-width: 251px;
-	max-height: 40px;
+   margin-top: 8px;
+   height: 40px;
+   max-width: 251px;
+   max-height: 40px;
 }
 
 .seguidor-heading
@@ -44,9 +45,9 @@ a, a:hover
 
 .user-menu-button
 {  
-    cursor: default;
-    margin-left: 14px;
-    margin-top: 5px;
+   cursor: default;
+   margin-left: 14px;
+   margin-top: 14px;
 }
 
 /* ------ MENSAJES -------- */
