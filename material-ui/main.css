@@ -50,6 +50,11 @@ a, a:hover
    margin-top: 14px;
 }
 
+.search-icon
+{
+  margin-top: 28px;
+}
+
 /* ------ MENSAJES -------- */
 
 .msg
