@@ -1,4 +1,5 @@
-html {
+html 
+{
   font-family: 'Roboto', sans-serif;
 }
 
@@ -10,15 +11,12 @@ body
   margin: 0px;
 }
 
-.main-body
-{
-  margin-left: 67px;
-}
-
 a, a:hover
 {
   text-decoration: none;	
 }
+
+/* TOOLBAR */
 
 .toolbar-fixed
 {
@@ -29,49 +27,10 @@ a, a:hover
   top: 0 !important;
 }
 
-.banner-img
-{
-   margin-top: 8px;
-   height: 40px;
-   max-width: 251px;
-   max-height: 40px;
-}
+/* HEADING */
 
 .seguidor-heading
 {
   text-align: center;
-  margin-top: 80px;
-}
-
-.user-menu-button
-{  
-   cursor: default;
-   margin-left: 14px;
-   margin-top: 14px;
-}
-
-.search-icon
-{
-  margin-top: 28px;
-}
-
-/* ------ MENSAJES -------- */
-
-.msg
-{
-  margin-left: 120px;
-  margin-top: 50px;
-}
-
-.msg-title
-{
-  font-size: 25px;
-}
-
-.msg-content
-{
-  border-top: 0.5px solid gainsboro;
-  border-bottom: 0.5px solid gainsboro;
-  width: 711px;
-  font-size: 15px;	
+  margin-top: 100px;
 }
