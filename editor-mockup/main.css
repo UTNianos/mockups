@@ -1,0 +1,196 @@
+﻿html 
+{
+  font-family: 'Roboto', sans-serif;
+}
+
+body 
+{
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+  margin: 0px;
+}
+
+a, a:hover
+{
+  text-decoration: none;	
+}
+
+/* TOOLBAR */
+
+.toolbar-fixed
+{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  top: 0 !important;
+}
+
+/* HEADING */
+
+.seguidor-heading
+{
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* --------------- EDITOR -------------------- */
+
+.public-DraftEditor-content{
+   overflow: auto;
+}
+
+.RichEditor-root {
+  background: #fff;
+  border: 1px solid #ddd;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  padding: 15px;
+  
+  width: 75%;
+  margin-left: 12%;
+  height: 87%;
+}
+
+.composer-panel
+{
+  resize: vertical;	
+  height: 350px;
+}
+
+
+.RichEditor-editor {
+  border-top: 1px solid #ddd;
+  cursor: text;
+  font-size: 16px;
+  margin-top: 0px;
+}
+
+.RichEditor-editor .public-DraftEditorPlaceholder-root,
+.RichEditor-editor .public-DraftEditor-content {
+  margin: 0 -15px -15px;
+  padding: 15px;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+  min-height: 100px;
+  height: 250px;
+}
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.RichEditor-controls {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+.RichEditor-styleButton {
+  color: #999;
+  cursor: pointer;
+  padding: 2px 0;
+  display: inline-block;
+}
+
+/* ------------------- EDITOR STYLES --------- */
+
+.rightText
+{
+  text-align: right;
+}
+
+.leftText
+{
+  text-align: left;
+}
+
+.centerText
+{
+  text-align: center;
+}
+
+.spoiler.concealed
+{
+	border: 1px dotted gray;
+	border-top: none;
+	background: #fff;
+	color: #fff;
+	padding: 0px 1.4px;
+	
+	/* Unselectable text */
+	user-select: none;           /* non-prefixed version, currently not supported by any browser */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* IE/Edge */		
+}
+
+.spoiler.revealed
+{
+	border: 1px dotted gray;
+	border-top: none;
+	background: #fff;		
+	padding: 0px 1.4px;
+}
+
+/* -- POST --*/
+.posts-container
+{
+  margin-top: 100px;	
+}
+
+.post
+{
+    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+    margin-top: 40px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.post-header
+{
+  padding-right: 8px;
+  margin-top: 12px;
+  padding-top: 0px;
+  display: inline-block;
+}
+
+.post-footer
+{
+   margin-left: 64%;
+   margin-top: 16px;
+}
+
+.user-name, .user-status
+{
+  margin-left: 11px;
+  font-size: 0.929em;
+  font-weight: bold;
+  color: #646464;
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
